@@ -137,7 +137,7 @@ a { color: inherit; }
     );
   }
   .hero__layout {
-    padding-top: 230px;
+    padding-top: 120px;
   }
 }
 .hero__layout {
@@ -450,8 +450,9 @@ a { color: inherit; }
   .tab.is-active .tab__num { color: rgba(255,255,255,.65); }
   /* 5th centered */
   .tab:last-child {
-    grid-column: 1 / 2;
-    justify-self: stretch;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 4px);
   }
   /* panels */
   .panel { display: none; }
