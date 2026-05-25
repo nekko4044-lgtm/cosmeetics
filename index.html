@@ -631,6 +631,45 @@ a { color: inherit; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ── HERO MOBILE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    min-height: 0;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  .hero-gradient {
+    display: none !important;
+  }
+  .hero-bg-picture {
+    width: 45% !important;
+    height: 280px !important;
+    left: auto !important;
+    right: 0 !important;
+    top: 0 !important;
+    border-radius: 0 0 0 20px;
+  }
+  .hero-bg-picture img {
+    object-position: right top !important;
+    border-radius: 0 0 0 20px;
+  }
+  .hero-content-container {
+    padding-top: 0;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .hero__text {
+    max-width: 65% !important;
+    text-align: left !important;
+  }
+  .hero__logo {
+    font-size: clamp(40px, 8vw, 60px) !important;
+    margin-top: 10px;
+  }
+}
 </style>
 </head>
 <body>
