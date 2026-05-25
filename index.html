@@ -128,6 +128,9 @@ a { color: inherit; }
   align-items: flex-start;
   gap: clamp(36px, 5vw, 56px);
 }
+@media (max-width: 640px) {
+  .hero-bg { content: url(hero-mobile.png); }
+}
 .hero__text { text-align: left; max-width: 560px; }
 
 .hero__logo {
@@ -657,10 +660,7 @@ a { color: inherit; }
 
 <!-- ══════════════════════════════════════════════ HERO -->
 <section class="hero-section" id="top">
-  <picture>
-    <source media="(max-width: 640px)" srcset="hero-mobile.png">
-    <img class="hero-bg" src="hero.png" alt="Couple relaxing at cosmeetics spa">
-  </picture>
+  <img class="hero-bg" src="hero.png" alt="Couple relaxing at cosmeetics spa">
   <div class="hero-overlay"></div>
   <div class="hero-content">
 
