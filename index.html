@@ -111,14 +111,27 @@ a { color: inherit; }
   );
 }
 @media (max-width: 640px) {
-  .hero__bg { object-position: right top; }
+  .hero__bg {
+    inset: auto;
+    top: 0; left: 0; right: auto; bottom: auto;
+    width: 60%; height: 72%;
+    object-fit: cover; object-position: center top;
+  }
   .hero::after {
     background: linear-gradient(
       to right,
-      rgba(247,243,234,.97) 0%,
-      rgba(247,243,234,.90) 38%,
-      rgba(247,243,234,.50) 62%,
-      rgba(247,243,234,.05) 100%
+      rgba(247,243,234,0)    0%,
+      rgba(247,243,234,.30)  40%,
+      rgba(247,243,234,.88)  62%,
+      rgba(247,243,234,.98)  80%,
+      rgba(247,243,234,1)   100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(247,243,234,0)   0%,
+      rgba(247,243,234,0)   55%,
+      rgba(247,243,234,.85) 80%,
+      rgba(247,243,234,1)   100%
     );
   }
 }
