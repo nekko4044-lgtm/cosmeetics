@@ -97,19 +97,25 @@ a { color: inherit; }
   flex-direction: column;
   justify-content: center;
 }
-.hero-bg-picture,
-.hero-bg-picture img {
+.hero-bg-picture {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;
-  object-position: right top !important;
   z-index: 0 !important;
+  overflow: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.hero-bg-picture img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: right top !important;
   display: block !important;
+  position: relative !important; 
 }
 .hero-gradient {
   position: absolute;
