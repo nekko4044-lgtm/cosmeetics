@@ -111,12 +111,14 @@ a { color: inherit; }
   );
 }
 @media (max-width: 640px) {
+  .hero__bg { object-position: center top; }
   .hero::after {
     background: linear-gradient(
-      to bottom,
-      rgba(247,243,234,.82) 0%,
-      rgba(247,243,234,.94) 55%,
-      rgba(247,243,234,1)   80%
+      to right,
+      rgba(247,243,234,.97) 0%,
+      rgba(247,243,234,.90) 38%,
+      rgba(247,243,234,.55) 62%,
+      rgba(247,243,234,.10) 100%
     );
   }
 }
@@ -656,7 +658,10 @@ a { color: inherit; }
 
 <!-- ══════════════════════════════════════════════ HERO -->
 <section class="hero" id="top">
-  <img class="hero__bg" src="hero.png" alt="" aria-hidden="true">
+  <picture>
+    <source media="(max-width: 640px)" srcset="hero-mobile.jpg">
+    <img class="hero__bg" src="hero.png" alt="" aria-hidden="true">
+  </picture>
   <div class="hero__layout">
 
     <div class="hero__text">
