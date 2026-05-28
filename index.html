@@ -1065,7 +1065,8 @@ a { color: inherit; }
 
     <h3>Kontakt</h3>
     <p>
-      Telefon: <a href="tel:+4963218251">06321 / 8 25 10</a>
+      Telefon: <a href="tel:+4963218251">06321 / 8 25 10</a><br>
+      Mobil: <a href="tel:+4917680229985">0176 / 80 22 99 85</a>
     </p>
 
     <hr>
@@ -1203,6 +1204,39 @@ a { color: inherit; }
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
     document.querySelectorAll('.modal-backdrop.is-open').forEach(m => m.classList.remove('is-open'));
+  });
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════ COOKIE BANNER -->
+<div id="cookie-banner" style="
+  display:none;
+  position:fixed; bottom:0; left:0; right:0; z-index:999;
+  background:#fff; border-top:1px solid rgba(0,0,0,.08);
+  box-shadow:0 -4px 24px rgba(0,0,0,.08);
+  padding:18px clamp(16px,5vw,40px);
+  font-family:var(--sans); font-size:14px; color:var(--ink-soft);
+  display:flex; flex-wrap:wrap; align-items:center; gap:14px;
+">
+  <p style="margin:0;flex:1;min-width:200px;">
+    Diese Website verwendet keine Tracking-Cookies. Wir nutzen ausschließlich technisch notwendige Cookies, um die Grundfunktionen der Seite sicherzustellen.
+    <a href="#" onclick="document.getElementById('impressum-backdrop').classList.add('is-open');return false;" style="color:var(--green-dark);text-decoration:underline;">Mehr erfahren</a>
+  </p>
+  <button id="cookie-accept" style="
+    background:var(--green);color:#fff;border:none;cursor:pointer;
+    padding:10px 24px;border-radius:999px;font-family:var(--sans);
+    font-size:14px;font-weight:600;white-space:nowrap;
+  ">Verstanden</button>
+</div>
+
+<script>
+(function(){
+  if (!localStorage.getItem('cookie_ok')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function(){
+    localStorage.setItem('cookie_ok','1');
+    document.getElementById('cookie-banner').style.display = 'none';
   });
 })();
 </script>
