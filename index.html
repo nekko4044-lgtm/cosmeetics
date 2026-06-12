@@ -4,9 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cosmeetics — Schönheit verbindet · Neustadt</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=nunito:300,400,500,600,700,800|cormorant-garamond:400,400i,500,500i,600,600i&display=swap">
 <style>
 :root {
   --green:       #6aaa2a;
@@ -722,7 +721,7 @@ a { color: inherit; }
           </span>
           <h3>Adresse</h3>
           <p>Theodor-Körner-Straße 24<br>67433 Neustadt a. d. Weinstraße</p>
-          <a class="info-card__link" href="https://maps.google.com/?q=Theodor-Körner-Straße+24+67433+Neustadt" target="_blank" rel="noopener">Auf Karte zeigen →</a>
+          <a class="info-card__link" href="#" onclick="document.getElementById('maps-dialog').classList.add('is-open');return false;">Auf Karte zeigen →</a>
         </article>
 
         <article class="info-card info-card--accent">
@@ -1043,6 +1042,8 @@ a { color: inherit; }
     <span class="footer__sep">·</span>
     <button onclick="document.getElementById('verbraucher-modal').classList.add('is-open')" style="background:none;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.65);font:inherit;font-size:13px;">Verbraucherrechte</button>
     <span class="footer__sep">·</span>
+    <button onclick="document.getElementById('datenschutz-modal').classList.add('is-open')" style="background:none;border:0;padding:0;cursor:pointer;color:rgba(255,255,255,.65);font:inherit;font-size:13px;">Datenschutz</button>
+    <span class="footer__sep">·</span>
     <a href="#top">Nach oben ↑</a>
   </div>
 </footer>
@@ -1207,6 +1208,51 @@ a { color: inherit; }
   });
 })();
 </script>
+
+<!-- ══════════════════════════════════════════════ GOOGLE MAPS DIALOG -->
+<div class="modal-backdrop" id="maps-dialog" role="dialog" aria-modal="true" aria-label="Weiterleitung zu Google Maps" onclick="if(event.target===this)this.classList.remove('is-open')">
+  <div class="modal" style="max-width:420px;">
+    <button class="modal__close" onclick="document.getElementById('maps-dialog').classList.remove('is-open')" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2 style="font-size:1.2rem;margin-bottom:12px;">Weiterleitung zu Google Maps</h2>
+    <p style="font-size:15px;color:var(--ink-soft);line-height:1.6;margin-bottom:20px;">
+      Sie werden jetzt zu Google Maps weitergeleitet. Dabei werden Daten (z.&nbsp;B. Ihre IP-Adresse) an Google LLC in den USA übertragen. Weitere Informationen finden Sie in unserer <button onclick="document.getElementById('maps-dialog').classList.remove('is-open');document.getElementById('datenschutz-modal').classList.add('is-open')" style="background:none;border:0;padding:0;cursor:pointer;color:var(--green-dark);text-decoration:underline;font:inherit;font-size:inherit;">Datenschutzerklärung</button>.
+    </p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="https://maps.google.com/?q=Theodor-Körner-Straße+24+67433+Neustadt" target="_blank" rel="noopener" onclick="document.getElementById('maps-dialog').classList.remove('is-open')" style="display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:14px;border-radius:999px;">Weiter zu Google Maps →</a>
+      <button onclick="document.getElementById('maps-dialog').classList.remove('is-open')" style="padding:11px 22px;background:transparent;border:1.5px solid var(--cream-deep);border-radius:999px;cursor:pointer;font:inherit;font-size:14px;color:var(--ink-soft);">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ DATENSCHUTZ MODAL -->
+<div class="modal-backdrop" id="datenschutz-modal" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung" onclick="if(event.target===this)this.classList.remove('is-open')">
+  <div class="modal">
+    <button class="modal__close" onclick="document.getElementById('datenschutz-modal').classList.remove('is-open')" aria-label="Schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2>Datenschutzerklärung</h2>
+
+    <h3>1. Verantwortliche Stelle</h3>
+    <p>Olesia Henze · cosmeetics<br>Theodor-Körner-Straße 24, 67433 Neustadt an der Weinstraße<br>Tel.: 06321 / 8 25 10</p>
+
+    <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Diese Website erhebt und verarbeitet keine personenbezogenen Daten über Tracking-Cookies oder Analysetools. Es werden ausschließlich technisch notwendige Daten verarbeitet, die Ihr Browser automatisch übermittelt (z.&nbsp;B. IP-Adresse, Browsertyp, Datum und Uhrzeit des Zugriffs). Diese Daten werden nur zur Sicherstellung des Betriebs der Website verwendet und nicht an Dritte weitergegeben.</p>
+
+    <h3>3. Schriftarten (Bunny Fonts)</h3>
+    <p>Diese Website verwendet Schriftarten des Dienstes Bunny Fonts (BunnyWay d.o.o., Cesta komandanta Staneta 4A, 1215 Medvode, Slowenien). Bunny Fonts ist ein europäischer Dienst, der keine personenbezogenen Daten an Dritte außerhalb der EU/des EWR weitergibt. Es werden keine Cookies gesetzt. Weitere Informationen: <a href="https://fonts.bunny.net" target="_blank" rel="noopener" style="color:var(--green-dark);">fonts.bunny.net</a></p>
+
+    <h3>4. Google Maps</h3>
+    <p>Auf Wunsch können Sie unseren Standort über Google Maps (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA) aufrufen. Dabei werden Daten, einschließlich Ihrer IP-Adresse, an Google in den USA übertragen. Die Übertragung erfolgt nur nach ausdrücklicher Bestätigung durch Sie. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--green-dark);">policies.google.com/privacy</a></p>
+
+    <h3>5. Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO) sowie Datenübertragbarkeit (Art. 20 DSGVO). Zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an die oben genannte verantwortliche Stelle. Sie haben zudem das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren.</p>
+
+    <h3>6. Kontakt</h3>
+    <p>Bei Fragen zum Datenschutz wenden Sie sich bitte an: Tel. 06321 / 8 25 10</p>
+  </div>
+</div>
 
 <!-- ══════════════════════════════════════════════ COOKIE BANNER -->
 <div id="cookie-banner" style="
